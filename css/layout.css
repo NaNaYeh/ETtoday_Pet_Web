@@ -1,0 +1,145 @@
+body{ }
+/*wrapper*/
+.wrapper_box{}	
+.wrapper{}
+
+/*top_bar*/
+.top_bar{ padding:10px 0px; background-color:#dbeff7;}
+.top_bar .menu_1{ display:flex; justify-content:flex-end; width:100%; max-width:1200px; margin:0px auto; padding:0px 5px;}
+.top_bar .menu_1 li{ margin-right:10px;}
+.top_bar .menu_1 li a{ display:inline-block; font-size:15px; font-weight:800;}
+.top_bar .menu_1 li a::before{ content:""; display:inline-block; width:20px; height:20px; background:url("../images/icon_1.png") no-repeat; background-size:200% auto; position:relative; top:3px;}
+.top_bar .menu_1 li:nth-child(1) a::before{ background-position:0px 0px;}
+.top_bar .menu_1 li:nth-child(2) a::before{ background-position:-20px 0px;}
+.top_bar .menu_1 li:nth-child(1):hover a::before{ background-position:0px -20px;}
+.top_bar .menu_1 li:nth-child(2):hover a::before{ background-position:-20px -20px;}
+
+@media only screen and (min-width: 768px){
+	.top_bar .menu_1{ padding:0px 45px;}
+}
+
+/*side*/
+.side{ width:100%; height:100%; padding:40px 0px 0px 0px; overflow:auto; background:rgba(255, 255, 255, 1); position:fixed; top:0px; left:-100%;/*從最外側*/ transition:0.3s; z-index:999;}
+.side.active{ left:0%;}
+.side .btn_close{ width:30px; height:30px; background:url("../images/btn_close.png") no-repeat; background-size:100% auto; position:absolute; top:6px; right:10px;}
+.side .inner { width:100%; max-width:640px; margin:0px auto;}
+.side .inner ul.nav_2{ text-align:center;}
+.side .inner ul.nav_2 li{ border-bottom:1px solid #2e2870;}
+.side .inner ul.nav_2 li:nth-child(4){ border-bottom:0px;}
+.side .inner ul.nav_2 li > a{ display:block; width:100%; padding:5px 0px; color:#fff; background-color:#e8b216; border-bottom:1px solid #2e2870;}
+.side .inner ul.nav_2 li .sub > a{ display:block; width:calc( 100% / 2); float:left; padding:5px 0px; color:#2e2870; border-bottom:1px solid #2e2870; border-right:1px solid #2e2870;}
+.side .inner ul.nav_2 li .sub > a:nth-child(even){ border-right:0px;}
+.side .inner ul.nav_2 li .sub > a:last-child{ border-bottom:0px;}
+.side .inner ul.nav_2 li:nth-child(1) .sub > a:nth-last-child(2){ border-bottom:0px;}
+
+/*1200px*/
+@media only screen and (min-width: 1000px){
+	.side{ display:none;}
+}
+
+
+/*header*/
+.header_box{ position:sticky; top:0px; margin-bottom:30px; background-color:#fff; z-index:998;}
+.header_box::after{ content:""; display:block; width:100%; height:1px; box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.9); z-index:5; position:absolute; bottom:0px; left:0px;}
+.header{ width:100%; height:50px; position:relative;}
+.header h2.main_logo{ position:absolute; left:50%; top:50%; transform:translate(-50%, -50%);}
+.header h2.main_logo a{ display:block; width:200px; height:40px; background:url("../images/pet_logo.png") no-repeat; background-size:100% auto; text-indent:100%; white-space:nowrap; overflow:hidden;}
+
+/*search_box & m_search_box */
+.header .search_box{ display:none;}
+.header .m_search_box{ width:0px;/*初始隱藏*/ height:40px; position:absolute; right:2%; top:0%;}
+.header .m_search_box .icon_open{ width:35px; height:25px; background:url("../images/icon_search.png") no-repeat #2e2870; background-size:200% auto; background-position:0px 0px; border-radius:14px; position:absolute; right:0%; top:50%; transform:translate(0%, -30%);} 
+.header .m_search_box .icon_close{ width:35px; height:25px; background:#e8b216; border-radius:14px; font-weight:800; text-align:center; color:#fff; position:absolute; right:0%; top:50%; transform:translate(0%, -35%);}
+.header .m_search_box .gsbox .keyword{ 
+	-webkit-appearance:none; border:none; 
+	width:0px;/*初始隱藏*/ border-radius:14px; height:30px; position:absolute; right:15%; top:50%; transform:translate(0%, -35%); border:1px solid #2e2870;}
+
+
+@media only screen and (min-width: 1000px){
+	.header .m_search_box{ display:none;}
+	.header .search_box{ display:block; position:absolute; top:36%; right:5%;}
+	.header .search_box input.txt{ width:260px; height:30px; padding-left:10px; border-radius:14px; border:1px solid #2e2870;}
+	.header .search_box input.btn{ border:none; outline:none; width:40px; height:30px; background:url("../images/icon_search.png") no-repeat #2e2870; background-size:200% auto; background-position:2px 2px; text-indent:-9999px; cursor:pointer; border-radius:14px; position:absolute; top:0px; right:0px;}
+}
+
+/*nav_1*/
+.header ul.nav_1{ display:none;}
+.header ul.nav_1 li:nth-child(3) > a, .header ul.nav_1 li:nth-child(6) > a{ cursor:default;}
+
+/*btn_open*/
+.header .btn_open{ width:30px; height:30px; background:url("../images/btn_open.png") no-repeat; background-size:100% auto; position:absolute; left:2%; top:50%; transform:translate(0%, -50%);}
+
+@media only screen and (min-width: 1000px){
+	.header_box .header .btn_open{ display:none;}
+}
+
+/*1200px*/
+@media only screen and (min-width: 1000px){
+
+	.header_box{ position:relative;}
+	.header{ width:100%; max-width:1200px; height:180px; margin:0px auto; padding:10px 0px 0px 0px;}
+	.header h2.main_logo{ margin-bottom:30px; position:absolute; left:50%; top:38%; transform:translate(-50%, -50%);}
+	.header h2.main_logo a{ display:block; width:320px; height:60px; background:url("../images/pet_logo.png") no-repeat; background-size:100% auto;}
+
+	/*nav_1*/	
+	.header ul.nav_1{ display:block; width:100%; max-width:1200px; margin:0px auto; position:absolute; left:50%; bottom:0px; transform:translate(-50%, 0%);}
+	.header ul.nav_1 li{ width:calc(100% / 6); height:50px; line-height:50px; float:left; text-align:center; position:relative;}
+	.header ul.nav_1 li > a { display:block; height:60px; line-height:50px; font-size:18px; font-weight:800;}
+	.header ul.nav_1 li > a:hover span{ padding-bottom:4px; border-bottom: 2px solid #2e2870; color:#e8b216;}
+	.header ul.nav_1 li > a.current span{ padding-bottom:4px; border-bottom: 2px solid #2e2870;}
+	.header ul.nav_1 li > .sub{ display:none; width:100%; padding:5px 0px; background-color:#fff; border-radius:5px; position:absolute;  left:0px; top:50px; box-shadow:-1px 3px 5px rgba(0, 0, 0, 0.3);}
+
+	/*sub*/
+	.header ul.nav_1 li > .sub > a{ display:block; border-bottom:1px solid #2e2870;}
+	.header ul.nav_1 li > .sub > a:last-child{ border-bottom:none;}
+	.header ul.nav_1 li:hover > .sub{ display:block;}
+
+}
+
+
+/*container*/
+.container_box{ padding-bottom:80px;}
+.container{ width:100%; max-width:1200px; margin:0px auto;}
+.container .r1{ padding:0px 15px;}
+.container .r1 .c2{ display:none;/*手機隱藏*/}
+
+@media only screen and (min-width: 1000px){
+	.container .r1 .c1{ width:70%; float:left; margin-right:2%;}
+	.container .r1 .c2{ width:28%; float:right; overflow:hidden; display:block;/*PC出現*/}
+	.container .r1 .c1 .house_box{ display:none;}
+}
+
+
+/*footer*/
+.footer_box{ background-color:#2e2870;}
+.footer{ padding:20px 10px 20px 20px; color:#fff; font-size:12px; position:relative;}
+.footer .box_1{ margin-bottom:10px;}
+.footer .box_1 .menu_1{ margin-bottom:10px; padding-bottom:10px; border-bottom:2px solid #fff;}
+.footer .box_1 .menu_1 a { font-size:15px;}
+.footer .box_1 .menu_1 a:link, .footer .box_1 .menu_1 a:visited{ color:#fff;}
+.footer .box_1 .menu_1 a:hover, .footer .box_1 .menu_1 a:active { color:#e8b216;}
+.footer .box_1 address{ font-style:normal;}
+.footer .box_1 span{ display:block;}
+.footer .box_2 { }
+.footer .box_2 span.txt_1{ display:block; margin-bottom:5px; font-size:13px; font-weight:800;}
+.footer .box_2 a{ display:inline-block; width:140px; height:45px; font-size:0px; background:url("../images/app_store.png") no-repeat; background-size:200% auto; text-indent:100%; white-space:nowrap; overflow:hidden;}
+.footer .box_2 a.down_1{ background-position:0px 0px;}
+.footer .box_2 a.down_2{ background-position:-140px 0px;}
+.footer .bg_1{ }
+
+/*768px*/
+@media only screen and (min-width: 1200px){
+	.footer{ display:flex; height:125px; padding:40px 0px 0px 10px;}
+	.footer > .box_1{ margin-right:20px; height:80px;}
+	.footer > .box_1 span{ display:inline-block;}
+	.footer > .box_1 .menu_1{ padding-bottom:15px; margin-bottom:15px; border-bottom:2px solid #fff;}
+	.footer .bg_1{ width:300px; height:200px; background:url("../images/bg_footer.png") no-repeat; background-size:100% auto; position:absolute; bottom:0px; right:0px;}
+	.footer .box_2{ height:80px;}
+}
+
+/*gototop*/
+.gototop{ width:50px; height:70px; background: url("../images/gototop.png") no-repeat; background-size: 100% auto; position:fixed; right:3%; bottom:13%; text-indent:100%; white-space:nowrap; overflow:hidden; cursor:pointer; display:none;/*初始隱藏*/}
+
+@media only screen and (min-width: 768px){
+	.gototop{ width:100px; height:140px;}
+}

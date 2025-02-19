@@ -1,0 +1,1 @@
+copy html5reset-1.6.1.css + bxslider\jquery.bxslider.css + global.css + layout.css + block.css style.css
